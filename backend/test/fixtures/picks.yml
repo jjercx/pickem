@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game: one
+  question: one
+  right_option: 1
+  date: 2021-02-01
+  option_a_count: 1
+  option_b_count: 1
+  option_a_percent: 1.5
+  option_b_percent: 1.5
+
+two:
+  game: two
+  question: two
+  right_option: 1
+  date: 2021-02-01
+  option_a_count: 1
+  option_b_count: 1
+  option_a_percent: 1.5
+  option_b_percent: 1.5
