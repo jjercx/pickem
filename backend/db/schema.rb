@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_02_030055) do
+ActiveRecord::Schema.define(version: 2021_02_02_035302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,31 @@ ActiveRecord::Schema.define(version: 2021_02_02_030055) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["local_team_id"], name: "index_games_on_local_team_id"
     t.index ["visitor_team_id"], name: "index_games_on_visitor_team_id"
+  end
+
+  create_table "picks", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "question_id", null: false
+    t.integer "right_option", default: 0, null: false
+    t.date "date"
+    t.integer "option_a_count", default: 0
+    t.integer "option_b_count", default: 0
+    t.float "option_a_percent", default: 0.0
+    t.float "option_b_percent", default: 0.0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_picks_on_game_id"
+    t.index ["question_id"], name: "index_picks_on_question_id"
+  end
+
+  create_table "player_picks", force: :cascade do |t|
+    t.bigint "pick_id", null: false
+    t.bigint "player_id", null: false
+    t.integer "selected_option"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pick_id"], name: "index_player_picks_on_pick_id"
+    t.index ["player_id"], name: "index_player_picks_on_player_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -46,4 +71,8 @@ ActiveRecord::Schema.define(version: 2021_02_02_030055) do
 
   add_foreign_key "games", "teams", column: "local_team_id"
   add_foreign_key "games", "teams", column: "visitor_team_id"
+  add_foreign_key "picks", "games"
+  add_foreign_key "picks", "questions"
+  add_foreign_key "player_picks", "picks"
+  add_foreign_key "player_picks", "players"
 end
