@@ -38,6 +38,8 @@ gem 'rack-cors'
 gem 'seedbank'
 # A ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
 gem 'jwt'
+# RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data
+gem 'rails_admin', '~> 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
