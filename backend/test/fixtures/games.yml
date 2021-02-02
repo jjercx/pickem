@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  local_team: one
+  visitor_team: one
+  date: 2021-02-01
+
+two:
+  local_team: two
+  visitor_team: two
+  date: 2021-02-01
