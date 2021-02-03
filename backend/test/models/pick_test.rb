@@ -5,7 +5,7 @@
 #  id               :bigint           not null, primary key
 #  game_id          :bigint           not null
 #  question_id      :bigint           not null
-#  right_option     :integer          default(0), not null
+#  right_option     :integer
 #  date             :date
 #  option_a_count   :integer          default(0)
 #  option_b_count   :integer          default(0)
