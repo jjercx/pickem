@@ -9,6 +9,9 @@ Style/TrailingCommaInHashLiteral:
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: consistent_comma
 
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
 Style/Documentation:
   Enabled: false
 
@@ -17,3 +20,6 @@ Style/ClassAndModuleChildren:
 
 Metrics/MethodLength:
   Max: 20
+
+Lint/MissingSuper:
+  Enabled: false
