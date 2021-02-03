@@ -14,6 +14,7 @@ module Pickem
     config.load_defaults 6.1
 
     config.autoload_paths << Rails.root.join('app/serializers')
+    config.autoload_paths << Rails.root.join('app/services')
 
     # Configuration for the application, engines, and railties goes here.
     #
