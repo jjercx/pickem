@@ -3,7 +3,7 @@
 class GameGeneratorService < ApplicationService
   attr_accessor :date
 
-  def initialize(date)
+  def initialize(date:)
     @date = date.to_date
   end
 
