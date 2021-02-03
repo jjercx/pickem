@@ -10,7 +10,7 @@ Rails.application.routes.draw do
           post 'sign_up', to: 'auth#sign_up'
         end
       end
-      resources :player_picks, only: [:index]
+      resources :player_picks, only: %i[index update]
     end
   end
 end

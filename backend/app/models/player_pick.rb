@@ -14,4 +14,6 @@
 class PlayerPick < ApplicationRecord
   belongs_to :pick
   belongs_to :player
+
+  enum selected_option: %i[a b]
 end
