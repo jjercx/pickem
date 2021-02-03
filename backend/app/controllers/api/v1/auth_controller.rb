@@ -7,7 +7,7 @@ class Api::V1::AuthController < Api::ApiController
   def sign_up
     @player = Player.create(player_params)
     if @player.valid?
-      token = encode_token({ user_id: @player.id })
+      token = encode_token({ player_id: @player.id })
       render json: { player: @player, token: token }
     else
       render json: { error: @player.errors.full_messages.join(',') }, status: :unauthorized
@@ -18,7 +18,7 @@ class Api::V1::AuthController < Api::ApiController
     @player = Player.find_by(email: params[:email])
 
     if @player&.authenticate(params[:password])
-      token = encode_token({ user_id: @player.id })
+      token = encode_token({ player_id: @player.id })
       render json: { player: @player, token: token }
     else
       render json: { error: 'Invalid email or password' }, status: :unauthorized
