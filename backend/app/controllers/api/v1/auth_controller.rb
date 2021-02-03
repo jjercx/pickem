@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Api::V1::AuthController < Api::ApiController
-  protect_from_forgery with: :null_session
   skip_before_action :verify_token, only: %i[sign_up log_in]
 
   def sign_up

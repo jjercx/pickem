@@ -2,6 +2,7 @@
 
 class Api::ApiController < ActionController::Base
   before_action :verify_token
+  protect_from_forgery with: :null_session
 
   def encode_token(payload)
     JWT.encode(payload, ENV['JWT_SECRET'])
