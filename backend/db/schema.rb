@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_02_02_035302) do
   create_table "picks", force: :cascade do |t|
     t.bigint "game_id", null: false
     t.bigint "question_id", null: false
-    t.integer "right_option", default: 0, null: false
+    t.integer "right_option"
     t.date "date"
     t.integer "option_a_count", default: 0
     t.integer "option_b_count", default: 0
